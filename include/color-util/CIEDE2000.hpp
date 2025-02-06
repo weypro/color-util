@@ -2,7 +2,7 @@
 
 #ifndef COLORUTIL_CIEDE2000_HPP
 #define COLORUTIL_CIEDE2000_HPP
-
+#define _USE_MATH_DEFINES
 #include <cmath>
 #include <color-util/type.hpp>
 

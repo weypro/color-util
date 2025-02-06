@@ -45,5 +45,18 @@ int main()
         throw std::runtime_error(FORMAT("Failed to pass the test (RGB-XYZ), delta = {}.", delta));
     }
 
+    // Test the correctness of RGB => XYZ => Lab => XYZ => RGB
+    {
+        const colorutil::XYZ xyz_from_rgb = colorutil::convert_RGB_to_XYZ(rgb_color);
+        const colorutil::Lab lab_from_xyz = colorutil::convert_XYZ_to_Lab(xyz_from_rgb);
+        const colorutil::XYZ xyz_from_lab = colorutil::convert_Lab_to_XYZ(lab_from_xyz);
+        const colorutil::RGB rgb_from_xyz = colorutil::convert_XYZ_to_RGB(xyz_from_lab);
+
+        if ((delta = (rgb_color - rgb_from_xyz).norm()) > 1e-5)
+        {
+            throw std::runtime_error(FORMAT("Failed to pass the test (RGB-XYZ-LAB-XYZ-RGB), delta = {}.", delta));
+        }
+    }
+
     return 0;
 }

@@ -5,7 +5,7 @@
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include <color-util/type.hpp>
-
+#define M_PI       3.14159265358979323846
 namespace colorutil
 {
     /// \brief  Calculate the perceptual color difference based on CIEDE2000.

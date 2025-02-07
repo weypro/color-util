@@ -109,7 +109,7 @@ namespace colorutil
         // Manual expansion of C_ab_bar^7
         const double C_ab_bar_2 = C_ab_bar * C_ab_bar;
         const double C_ab_bar_4 = C_ab_bar_2 * C_ab_bar_2;
-        const double C_ab_bar_7 = C_ab_bar_4 * C_ab_bar_2 * C_ab_bar;
+        const double C_ab_bar_7 = C_ab_bar * C_ab_bar_2 * C_ab_bar_4;
 
         const double G = 0.5 * (1.0 - std::sqrt(C_ab_bar_7 / (C_ab_bar_7 + pow_25_7)));
 
@@ -145,7 +145,7 @@ namespace colorutil
         // Manual expansion of C_prime_bar^7
         const double C_prime_bar_2 = C_prime_bar * C_prime_bar;
         const double C_prime_bar_4 = C_prime_bar_2 * C_prime_bar_2;
-        const double C_prime_bar_7 = C_prime_bar_4 * C_prime_bar_2 * C_prime_bar;
+        const double C_prime_bar_7 = C_prime_bar * C_prime_bar_2 * C_prime_bar_4;
 
         const double R_C = 2.0 * std::sqrt(C_prime_bar_7 / (C_prime_bar_7 + pow_25_7));
 
